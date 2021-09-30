@@ -14,7 +14,7 @@ first clone the project
 git clone https://github.com/ayman-93/chat-application.git 
 ```
 
-copy the project folder to hdocs folder(default path for windows 'C:\xampp\htdocs') of xampp application, to run the php files<br>
+copy the project folder to hdocs folder(default path for windows 'C:\xampp\htdocs') of xampp application, to run the php files.<br>
 open the project folder in terminal and run
 ```bash
 npm i
