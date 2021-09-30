@@ -1,6 +1,6 @@
 // if loged in rederct to home page
 if (localStorage.getItem("user")) {
-    window.location.replace('/website/index.html')
+    window.location.replace('/index.html')
 }
 
 const login = document.getElementById('login');

@@ -31,14 +31,25 @@ const saveUserPublicMessage = async (id, message, userName) => {
     return await knex('messages').insert({ message, from_user_id: id, from_user_name: userName, to_user_id: -1 });
 }
 
+const saveUserPrivateMessage = async (id, message, userName, receiverId) => {
+    return await knex('messages').insert({ message, from_user_id: id, from_user_name: userName, to_user_id: receiverId });
+}
+
 
 const getMessages = async () => {
-    // return await knex.select('*')
-    //     .from('messages')
-    //     .then(rows => rows)
-
     return await knex('messages')
         .join('users', 'messages.from_user_id', '=', 'users.id')
+        .where('messages.to_user_id', '=', -1)
+        .select('messages.message', 'users.name')
+}
+
+const getPrivateMessages = async (senderId, receverId) => {
+    return await knex('messages')
+        .join('users', 'messages.from_user_id', '=', 'users.id')
+        .where('messages.from_user_id', '=', senderId)
+        .andWhere('messages.to_user_id', '=', receverId)
+        .orWhere('messages.from_user_id', '=', receverId)
+        .andWhere('messages.to_user_id', '=', senderId)
         .select('messages.message', 'users.name')
 }
 
@@ -48,5 +59,7 @@ const getMessages = async () => {
 module.exports = {
     isUserExist,
     saveUserPublicMessage,
-    getMessages
+    saveUserPrivateMessage,
+    getMessages,
+    getPrivateMessages
 }
