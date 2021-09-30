@@ -14,17 +14,17 @@ first clone the project
 git clone https://github.com/ayman-93/chat-application.git 
 ```
 
-copy the project folder to hdocs folder(default path for windows 'C:\xampp\htdocs') of xampp application, to run the php files.<br>
+copy the project folder to hdocs folder(default path for windows 'C:\xampp\htdocs') of xampp application, to run the php files.<br><br>
 open the project folder in terminal and run
 ```bash
 npm i
 ```
-to install the node_modules requred for the node server.
+to install the node_modules requred for the node server.<br><br>
 
 ```bash
 npm start
 ```
-to run the node server<br>
+to run the node server<br><br>
 open xampp application and start appache server.
 
 ## Info
