@@ -33,7 +33,7 @@ node.js to run the socket server and store messages in sqlite database (same dat
 
 
 ## Used library for the website
-Bootstrap 4.3
+Bootstrap 4.3<br>
 Crypto.js
 
 ## Used Library for node.js server
