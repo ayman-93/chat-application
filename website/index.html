@@ -8,11 +8,19 @@
     <title>Chat Application</title>
     <link rel="stylesheet" href="./style/font-awesome.min.css">
     <link rel="stylesheet" href="./style/bootstrap.min.css">
+
+    <!-- Boostrap JS -->
+    <script src="./javascript/jquery-3.4.1.slim.min.js"></script>
+    <script src="./javascript//bootstrap.min.js"></script>
+    <script src="./javascript/popper.min.js"></script>
+
     <link rel="stylesheet" href="./style/style.css">
     <!-- <script src="./jquery-3.3.1.slim.min.js"></script>
     <script src="./bootstrap.bundle.min.js"></script> -->
     <script defer src="./javascript/main.js"></script>
     <script src="./javascript/createElements.js"></script>
+    <script src="./javascript/crypto-js.min.js"></script>
+    <script src="./javascript/crypto.js"></script>
     <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script defer src="./javascript/socket.js"></script>
 </head>
@@ -98,7 +106,18 @@
 
             </div>
         </div>
-
+    </div>
+    <!-- toast notification -->
+    <div class="container mb-5">
+        <div class="toast" data-autohide="false">
+            <div class="toast-header">
+                <strong class="mr-auto text-dark">New message from <span id="messageFrom"></span></strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+            </div>
+            <div class="toast-body">
+                <p id="meesage-notification"></p>
+            </div>
+        </div>
     </div>
 
 

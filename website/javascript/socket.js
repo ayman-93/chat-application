@@ -20,6 +20,15 @@ socket.on('chat-message', data => {
     appendMessage(data.name, data.message)
 })
 
+socket.on('private-chat-message', data => {
+    // popup notification
+    document.getElementById("messageFrom").innerText = data.name;
+    document.getElementById("meesage-notification").innerText = atob(decryptMessage(data.message, data.name));
+    $('.toast').toast("show");
+
+
+})
+
 socket.on('user-connected', user => {
     appendUsers(user.socketId, user.name, user.id)
 })

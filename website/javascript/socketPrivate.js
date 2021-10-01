@@ -4,6 +4,11 @@ const socket = io('http://localhost:3000');
 const chatBox = document.getElementById('chatBox');
 const messageBox = document.getElementById('txtBox');
 
+const user = JSON.parse(localStorage.getItem("user"));
+const receiver = JSON.parse(localStorage.getItem("receiver"));
+
+secretKey = [receiver.name, user.name].sort().join();
+
 messageBox.addEventListener('keyup', (e) => {
     if (e.key == "Enter") {
         sendMessage();
@@ -19,12 +24,11 @@ socket.on('private-chat-message', data => {
     if (receiver.name === data.name) {
         appendMessage(data.name, data.message)
     } else {
+        // popup notification
         document.getElementById("messageFrom").innerText = data.name;
-        // const message = 
         document.getElementById("meesage-notification").innerText = atob(decryptMessage(data.message, data.name));
         $('.toast').toast("show");
     }
-    console.log("private-chat-message ", `name ${data.name}: message ${data.message}`);
 })
 
 socket.on('requeste-private-chat', user => {
