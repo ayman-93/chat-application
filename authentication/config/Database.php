@@ -14,7 +14,7 @@ class Database
         $this->conn = null;
 
         try {
-            $this->conn = new PDO('sqlite:C:\xampp\htdocs\Technical Assessment\socket\chat_app.db');
+            $this->conn = new PDO('sqlite:C:\xampp\htdocs\chat-application\chat_app.db');
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo 'Connection Error: ' . $e->getMessage();

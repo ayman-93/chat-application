@@ -4,7 +4,7 @@
 Chat Application is Encrypted messaging provides end-to-end encryption for user-to-user text messaging.
 
 ## Requirements
-XAMPP: to run the php files <br>
+XAMPP: to run the php files (PHP Version 7.3.30)<br>
 Nodejs: to run the socket server.
 
 ## Installation

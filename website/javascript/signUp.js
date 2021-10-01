@@ -21,7 +21,7 @@ const signUpf = (e) => {
         email: email.value,
         password: password.value
     })
-    fetch('http://localhost/Technical%20Assessment/socket/authentication/api/user/create.php', {
+    fetch('http://localhost/chat-application/authentication/api/user/create.php', {
         method: 'POST',
         body: body
     }).then(res => res.json())

@@ -14,7 +14,7 @@ const loginf = (e) => {
 
     const body = JSON.stringify({ email: email.value, password: password.value });
 
-    fetch('http://localhost/Technical%20Assessment/socket/authentication/api/user/read_single.php', {
+    fetch('http://localhost/chat-application/authentication/api/user/read_single.php', {
         method: 'POST',
         body: body
     }).then(res => {
